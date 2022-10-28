@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Maqolalar:</h1>
+{%for maqola in maqolalar%}
+<h3><a href="/maqola_tan/{{maqola.id}}/">{{maqola.sarlavha}}</a></h3>
+{%endfor%}
+<h1>Yangi maqola qoshish uchun:</h1>
+<form action="/blog/" method="post">{%csrf_token%}
+    <input type="text" name="sarlavha">
+    <input type="date" name="sana">
+    <input type="text" name="mavzu">
+    <input type="text" name="matn">
+    <button type="submit">Saqlash</button>
+</form>
+
+</body>
+</html>
